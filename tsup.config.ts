@@ -1,35 +1,14 @@
 import { defineConfig } from 'tsup';
-
+import { vanillaExtractPlugin } from '@vanilla-extract/esbuild-plugin';
 export default defineConfig({
-  entry: ['src/index.ts'],
-  format: ['cjs', 'esm'],
-  sourcemap: true,
-  clean: true,
-  dts: true,
-  external: ['react', 'react-dom'],
+  entry: ['src/**/*@(ts|tsx)'],
+  format: ['esm'],
   outDir: 'dist',
-  splitting: true,
+  dts: true,
+  sourcemap: true,
+  external: ['react', 'react-dom'],
   treeshake: true,
   minify: true,
+  clean: true,
+  esbuildPlugins: [vanillaExtractPlugin()],
 });
-
-// import { defineConfig } from "tsup";
-// import fs from "node:fs/promises";
-// import path from "node:path";
-
-// export default defineConfig({
-//   entry: ["src/**/*@(ts|tsx)"],
-//   dts: true,
-//   format: ["esm"],
-//   treeshake: true,
-//   minify: true,
-//   clean: true,
-//   external: ["react", "react-dom"],
-//   async onSuccess() {
-//     await fs.writeFile(
-//       path.join(__dirname, "dist", "index.mjs"),
-//       '"use client";\n' +
-//         (await fs.readFile(path.join(__dirname, "dist", "index.mjs")))
-//     );
-//   },
-// });

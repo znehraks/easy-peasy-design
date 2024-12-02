@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
-import { button } from './Button.css';
 import clsx from 'clsx';
+import { button } from './Button.css.js';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'danger';
