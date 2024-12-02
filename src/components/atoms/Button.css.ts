@@ -1,11 +1,16 @@
-import { recipe } from "@vanilla-extract/recipes";
+import { recipe } from '@vanilla-extract/recipes';
 
 export const button = recipe({
-    variants: {
-        variant: {
-            primary: {},
-            secondary: {},
-            danger: {},
-        }
-    }
-})
+  variants: {
+    variant: {
+      primary: {},
+      secondary: {},
+      danger: {},
+    },
+    size: {
+      sm: {},
+      md: {},
+      lg: {},
+    },
+  },
+});
