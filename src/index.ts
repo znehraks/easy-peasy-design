@@ -1,4 +1,4 @@
 import './reset.css';
 import './theme.css';
 
-export * from './components/atoms/Button';
+export * from './components/atoms/Button/Button';
