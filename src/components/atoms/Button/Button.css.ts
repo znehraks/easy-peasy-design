@@ -1,29 +1,35 @@
 import { recipe } from '@vanilla-extract/recipes';
-import { vars } from '../../../theme.css.js';
+import { vars } from '../../../theme.css';
 
 export const button = recipe({
-  base: {},
+  base: {
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    border: 'none',
+    cursor: 'pointer',
+  },
   variants: {
     variant: {
       primary: {
-        background: vars.color['--red-100'],
+        backgroundColor: vars.color.red100,
       },
       secondary: {
-        background: vars.color['--blue-100'],
+        backgroundColor: vars.color.blue100,
       },
       danger: {
-        background: vars.color['--green-100'],
+        backgroundColor: vars.color.green100,
       },
     },
     size: {
       sm: {
-        padding: 12,
+        padding: vars.space.space1,
       },
       md: {
-        padding: 16,
+        padding: vars.space.space2,
       },
       lg: {
-        padding: 20,
+        padding: vars.space.space3,
       },
     },
   },
