@@ -9,7 +9,11 @@ export const [themeClass, vars] = createTheme({
     '--green-100': '#00FF00',
     '--green-200': '#00FF00',
   },
-  space: {},
+  space: {
+    '--space-1': '12px',
+    '--space-2': '16px',
+    '--space-3': '20px',
+  },
   size: {},
   border: {},
   radius: {},
