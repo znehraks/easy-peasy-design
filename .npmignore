@@ -1,0 +1,23 @@
+# dist 폴더를 제외한 모든 소스 파일들 제외
+src/
+public/
+node_modules/
+
+
+
+# 설정 파일들 제외
+.vscode/
+.gitignore
+.prettierrc
+tsup.config.ts
+tsconfig.json
+eslint.config.js
+index.html
+vite.config.ts
+
+
+# 기타 개발 관련 파일들 제외
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx

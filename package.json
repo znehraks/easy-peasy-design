@@ -1,7 +1,9 @@
 {
   "name": "easy-peasy-design",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1-rc.2",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsup",
@@ -52,5 +54,6 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "sideEffects": false
+  "sideEffects": false,
+  "license": "MIT"
 }
