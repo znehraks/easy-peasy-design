@@ -12,13 +12,16 @@ export const button = recipe({
   variants: {
     variant: {
       primary: {
-        backgroundColor: vars.color.red100,
+        backgroundColor: vars.color.blue[400],
+        color: vars.color.black,
       },
       secondary: {
-        backgroundColor: vars.color.blue100,
+        backgroundColor: vars.color.blackAlpha[50],
+        color: vars.color.black,
       },
       danger: {
-        backgroundColor: vars.color.green100,
+        backgroundColor: vars.color.red[500],
+        color: vars.color.white,
       },
     },
     size: {

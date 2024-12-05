@@ -8,7 +8,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   className?: string;
 }
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ children, variant = 'primary', size = 'md', className, ...rest }, ref) => {
+  ({ children, variant = 'danger', size = 'md', className, ...rest }, ref) => {
     return (
       <button ref={ref} className={clsx(button({ variant, size }), className)} {...rest}>
         {children}
