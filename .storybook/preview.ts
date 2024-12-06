@@ -1,4 +1,6 @@
 import type { Preview } from '@storybook/react';
+import '../src/foundations/reset.css';
+import '../src/foundations/theme.css';
 
 const preview: Preview = {
   parameters: {

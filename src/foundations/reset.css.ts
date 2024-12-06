@@ -12,11 +12,6 @@ globalStyle('html, body', {
   width: '100%',
 });
 
-globalStyle('body', {
-  lineHeight: 1.5,
-  WebkitFontSmoothing: 'antialiased',
-});
-
 globalStyle('img, picture, video, canvas, svg', {
   display: 'block',
   maxWidth: '100%',
