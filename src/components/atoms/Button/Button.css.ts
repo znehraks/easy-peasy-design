@@ -187,7 +187,7 @@ const outlineVariants = colors.map(createOutlineVariant);
 const ghostVariants = colors.map(createGhostVariant);
 const plainVariants = colors.map(createPlainVariant);
 
-export const button = recipe({
+export const buttonStyleRecipe = recipe({
   base: {
     transition: `background-color ${vars.duration.medium}`,
     display: 'flex',
@@ -300,4 +300,4 @@ export const button = recipe({
   compoundVariants: [...solidVariants, ...outlineVariants, ...ghostVariants, ...plainVariants],
 });
 
-export type ButtonVariants = RecipeVariants<typeof button>;
+export type ButtonVariants = RecipeVariants<typeof buttonStyleRecipe>;

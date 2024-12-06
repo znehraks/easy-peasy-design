@@ -1,12 +1,14 @@
 import { forwardRef } from 'react';
 import clsx from 'clsx';
-import { button, ButtonVariants } from './Button.css.js';
+import { buttonStyleRecipe, ButtonVariants } from './Button.css.js';
+import { Size } from '../../types.js';
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
   ButtonVariants & {
     className?: string;
     disabled?: boolean;
     readOnly?: boolean;
+    size?: Size;
   };
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -14,7 +16,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         ref={ref}
-        className={clsx(button({ variant, size, color, disabled, readOnly }), className)}
+        className={clsx(buttonStyleRecipe({ variant, size, color, disabled, readOnly }), className)}
         disabled={disabled}
         aria-readonly={!!readOnly}
         {...rest}

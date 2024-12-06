@@ -5,3 +5,5 @@ type asProps = {
 type ElementProps = Omit<React.HTMLAttributes<HTMLElement>, 'as'>;
 
 export type AsElementProps = asProps & ElementProps;
+
+export type Size = 'sm' | 'md' | 'lg';
