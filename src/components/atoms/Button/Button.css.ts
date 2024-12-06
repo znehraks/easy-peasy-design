@@ -2,17 +2,38 @@ import { recipe } from '@vanilla-extract/recipes';
 import { vars } from '../../../foundations/theme.css.js';
 
 export const button = recipe({
-  base: { background: vars.color['--red-100'] },
+  base: {
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    border: 'none',
+    cursor: 'pointer',
+  },
   variants: {
     variant: {
-      primary: {},
-      secondary: {},
-      danger: {},
+      primary: {
+        backgroundColor: vars.color.blue[400],
+        color: vars.color.black,
+      },
+      secondary: {
+        backgroundColor: vars.color.blackAlpha[50],
+        color: vars.color.black,
+      },
+      danger: {
+        backgroundColor: vars.color.red[500],
+        color: vars.color.white,
+      },
     },
     size: {
-      sm: {},
-      md: {},
-      lg: {},
+      sm: {
+        padding: vars.space.space1,
+      },
+      md: {
+        padding: vars.space.space2,
+      },
+      lg: {
+        padding: vars.space.space3,
+      },
     },
   },
 });

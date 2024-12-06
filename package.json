@@ -1,8 +1,9 @@
 {
   "name": "easy-peasy-design",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "0.0.1-rc.3-a",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsup",
@@ -71,5 +72,6 @@
     "extends": [
       "plugin:storybook/recommended"
     ]
-  }
+  },
+  "license": "MIT"
 }
