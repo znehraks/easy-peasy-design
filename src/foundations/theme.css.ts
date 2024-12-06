@@ -230,6 +230,8 @@ globalStyle(':root', {
   '@media': {
     '(prefers-color-scheme: dark)': {
       vars: {
+        [vars.color.white]: '#000000',
+        [vars.color.black]: '#ffffff',
         // whiteAlpha 반전
         [vars.color.whiteAlpha[50]]: 'rgba(255,255,255, 1)',
         [vars.color.whiteAlpha[100]]: 'rgba(255,255,255, 0.92)',

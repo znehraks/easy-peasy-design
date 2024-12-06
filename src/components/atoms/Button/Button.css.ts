@@ -2,7 +2,6 @@ import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
 import { vars } from '../../../foundations/theme.css.js';
 import { StyleRule } from '@vanilla-extract/css';
 
-// 컴파운드 배리언트를 위한 타입 정의
 type ColorVariant =
   | 'white'
   | 'black'
@@ -25,7 +24,6 @@ type CompoundVariantType = {
   style: StyleRule;
 };
 
-// solid 배리언트 그룹
 const solidVariants: CompoundVariantType[] = [
   {
     variants: {
@@ -283,9 +281,7 @@ const solidVariants: CompoundVariantType[] = [
   },
 ];
 
-// outline 배리언트 그룹 (필요한 경우)
 const outlineVariants: CompoundVariantType[] = [
-  // outline 관련 배리언트들
   {
     variants: {
       color: 'white',
@@ -553,6 +549,384 @@ const outlineVariants: CompoundVariantType[] = [
   },
 ];
 
+const ghostVariants: CompoundVariantType[] = [
+  {
+    variants: {
+      color: 'white',
+      variant: 'ghost',
+    },
+    style: {
+      backgroundColor: 'transparent',
+      color: vars.color.black,
+      selectors: {
+        '&:not([disabled]):not([aria-readonly="true"]):hover': {
+          backgroundColor: vars.color.blackAlpha[200],
+        },
+        '&:disabled:hover': {
+          backgroundColor: 'transparent',
+        },
+        '&[aria-readonly]:hover': {
+          backgroundColor: 'transparent',
+        },
+      },
+    },
+  },
+  {
+    variants: {
+      color: 'black',
+      variant: 'ghost',
+    },
+    style: {
+      backgroundColor: 'transparent',
+      color: vars.color.black,
+      selectors: {
+        '&:not([disabled]):not([aria-readonly="true"]):hover': {
+          backgroundColor: vars.color.blackAlpha[200],
+        },
+        '&:disabled:hover': {
+          backgroundColor: 'transparent',
+        },
+        '&[aria-readonly]:hover': {
+          backgroundColor: 'transparent',
+        },
+      },
+    },
+  },
+  {
+    variants: {
+      color: 'red',
+      variant: 'ghost',
+    },
+    style: {
+      backgroundColor: 'transparent',
+      color: vars.color.red[500],
+      selectors: {
+        '&:not([disabled]):not([aria-readonly="true"]):hover': {
+          backgroundColor: vars.color.red[100],
+        },
+        '&:disabled:hover': {
+          backgroundColor: 'transparent',
+        },
+        '&[aria-readonly]:hover': {
+          backgroundColor: 'transparent',
+        },
+      },
+    },
+  },
+  {
+    variants: {
+      color: 'blue',
+      variant: 'ghost',
+    },
+    style: {
+      backgroundColor: 'transparent',
+      color: vars.color.blue[500],
+      selectors: {
+        '&:not([disabled]):not([aria-readonly="true"]):hover': {
+          backgroundColor: vars.color.blue[100],
+        },
+        '&:disabled:hover': {
+          backgroundColor: 'transparent',
+        },
+        '&[aria-readonly]:hover': {
+          backgroundColor: 'transparent',
+        },
+      },
+    },
+  },
+  {
+    variants: {
+      color: 'green',
+      variant: 'ghost',
+    },
+    style: {
+      backgroundColor: 'transparent',
+      color: vars.color.green[500],
+      selectors: {
+        '&:not([disabled]):not([aria-readonly="true"]):hover': {
+          backgroundColor: vars.color.green[100],
+        },
+        '&:disabled:hover': {
+          backgroundColor: 'transparent',
+        },
+        '&[aria-readonly]:hover': {
+          backgroundColor: 'transparent',
+        },
+      },
+    },
+  },
+  {
+    variants: {
+      color: 'yellow',
+      variant: 'ghost',
+    },
+    style: {
+      backgroundColor: 'transparent',
+      color: vars.color.yellow[500],
+      selectors: {
+        '&:not([disabled]):not([aria-readonly="true"]):hover': {
+          backgroundColor: vars.color.yellow[100],
+        },
+        '&:disabled:hover': {
+          backgroundColor: 'transparent',
+        },
+        '&[aria-readonly]:hover': {
+          backgroundColor: 'transparent',
+        },
+      },
+    },
+  },
+  {
+    variants: {
+      color: 'purple',
+      variant: 'ghost',
+    },
+    style: {
+      backgroundColor: 'transparent',
+      color: vars.color.purple[500],
+      selectors: {
+        '&:not([disabled]):not([aria-readonly="true"]):hover': {
+          backgroundColor: vars.color.purple[100],
+        },
+        '&:disabled:hover': {
+          backgroundColor: 'transparent',
+        },
+        '&[aria-readonly]:hover': {
+          backgroundColor: 'transparent',
+        },
+      },
+    },
+  },
+  {
+    variants: {
+      color: 'pink',
+      variant: 'ghost',
+    },
+    style: {
+      backgroundColor: 'transparent',
+      color: vars.color.pink[500],
+      selectors: {
+        '&:not([disabled]):not([aria-readonly="true"]):hover': {
+          backgroundColor: vars.color.pink[100],
+        },
+        '&:disabled:hover': {
+          backgroundColor: 'transparent',
+        },
+        '&[aria-readonly]:hover': {
+          backgroundColor: 'transparent',
+        },
+      },
+    },
+  },
+  {
+    variants: {
+      color: 'orange',
+      variant: 'ghost',
+    },
+    style: {
+      backgroundColor: 'transparent',
+      color: vars.color.orange[500],
+      selectors: {
+        '&:not([disabled]):not([aria-readonly="true"]):hover': {
+          backgroundColor: vars.color.orange[100],
+        },
+        '&:disabled:hover': {
+          backgroundColor: 'transparent',
+        },
+        '&[aria-readonly]:hover': {
+          backgroundColor: 'transparent',
+        },
+      },
+    },
+  },
+  {
+    variants: {
+      color: 'teal',
+      variant: 'ghost',
+    },
+    style: {
+      backgroundColor: 'transparent',
+      color: vars.color.teal[500],
+      selectors: {
+        '&:not([disabled]):not([aria-readonly="true"]):hover': {
+          backgroundColor: vars.color.teal[100],
+        },
+        '&:disabled:hover': {
+          backgroundColor: 'transparent',
+        },
+        '&[aria-readonly]:hover': {
+          backgroundColor: 'transparent',
+        },
+      },
+    },
+  },
+  {
+    variants: {
+      color: 'gray',
+      variant: 'ghost',
+    },
+    style: {
+      backgroundColor: 'transparent',
+      color: vars.color.gray[500],
+      selectors: {
+        '&:not([disabled]):not([aria-readonly="true"]):hover': {
+          backgroundColor: vars.color.gray[100],
+        },
+        '&:disabled:hover': {
+          backgroundColor: 'transparent',
+        },
+        '&[aria-readonly]:hover': {
+          backgroundColor: 'transparent',
+        },
+      },
+    },
+  },
+  {
+    variants: {
+      color: 'cyan',
+      variant: 'ghost',
+    },
+    style: {
+      backgroundColor: 'transparent',
+      color: vars.color.cyan[500],
+      selectors: {
+        '&:not([disabled]):not([aria-readonly="true"]):hover': {
+          backgroundColor: vars.color.cyan[100],
+        },
+        '&:disabled:hover': {
+          backgroundColor: 'transparent',
+        },
+        '&[aria-readonly]:hover': {
+          backgroundColor: 'transparent',
+        },
+      },
+    },
+  },
+];
+
+const plainVariants: CompoundVariantType[] = [
+  {
+    variants: {
+      color: 'white',
+      variant: 'plain',
+    },
+    style: {
+      color: vars.color.black,
+      backgroundColor: 'transparent',
+    },
+  },
+  {
+    variants: {
+      color: 'black',
+      variant: 'plain',
+    },
+    style: {
+      color: vars.color.black,
+      backgroundColor: 'transparent',
+    },
+  },
+  {
+    variants: {
+      color: 'red',
+      variant: 'plain',
+    },
+    style: {
+      color: vars.color.red[500],
+      backgroundColor: 'transparent',
+    },
+  },
+  {
+    variants: {
+      color: 'blue',
+      variant: 'plain',
+    },
+    style: {
+      color: vars.color.blue[500],
+      backgroundColor: 'transparent',
+    },
+  },
+  {
+    variants: {
+      color: 'green',
+      variant: 'plain',
+    },
+    style: {
+      color: vars.color.green[500],
+      backgroundColor: 'transparent',
+    },
+  },
+  {
+    variants: {
+      color: 'yellow',
+      variant: 'plain',
+    },
+    style: {
+      color: vars.color.yellow[500],
+      backgroundColor: 'transparent',
+    },
+  },
+  {
+    variants: {
+      color: 'purple',
+      variant: 'plain',
+    },
+    style: {
+      color: vars.color.purple[500],
+      backgroundColor: 'transparent',
+    },
+  },
+  {
+    variants: {
+      color: 'pink',
+      variant: 'plain',
+    },
+    style: {
+      color: vars.color.pink[500],
+      backgroundColor: 'transparent',
+    },
+  },
+  {
+    variants: {
+      color: 'orange',
+      variant: 'plain',
+    },
+    style: {
+      color: vars.color.orange[500],
+      backgroundColor: 'transparent',
+    },
+  },
+  {
+    variants: {
+      color: 'teal',
+      variant: 'plain',
+    },
+    style: {
+      color: vars.color.teal[500],
+      backgroundColor: 'transparent',
+    },
+  },
+  {
+    variants: {
+      color: 'gray',
+      variant: 'plain',
+    },
+    style: {
+      color: vars.color.gray[500],
+      backgroundColor: 'transparent',
+    },
+  },
+  {
+    variants: {
+      color: 'cyan',
+      variant: 'plain',
+    },
+    style: {
+      color: vars.color.cyan[500],
+      backgroundColor: 'transparent',
+    },
+  },
+];
+
 export const button = recipe({
   base: {
     transition: `background-color ${vars.duration.medium}`,
@@ -663,15 +1037,7 @@ export const button = recipe({
       },
     },
   },
-  compoundVariants: [
-    ...solidVariants,
-    ...outlineVariants,
-    // 필요한 다른 배리언트 그룹들
-    {
-      variants: { color: 'white', variant: 'solid' },
-      style: { backgroundColor: vars.color.white, color: vars.color.black },
-    },
-  ],
+  compoundVariants: [...solidVariants, ...outlineVariants, ...ghostVariants, ...plainVariants],
 });
 
 export type ButtonVariants = RecipeVariants<typeof button>;
