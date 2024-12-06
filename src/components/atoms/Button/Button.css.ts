@@ -1,5 +1,5 @@
 import { recipe } from '@vanilla-extract/recipes';
-import { vars } from '../../../theme.css.js';
+import { vars } from '../../../foundations/theme.css.js';
 
 export const button = recipe({
   base: { background: vars.color['--red-100'] },

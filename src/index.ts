@@ -1,4 +1,4 @@
-import './reset.css';
-import './theme.css';
+import './foundations/reset.css';
+import './foundations/theme.css';
 
-export * from './components/atoms/Button/Button';
+export * from './components';
