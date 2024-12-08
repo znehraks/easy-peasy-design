@@ -40,6 +40,8 @@ export const Default: Story = {
     variant: 'outline',
     disabled: false,
     readOnly: false,
+    suffix: 'dsdd',
+    prefix: 'dd',
     placeholder: '입력해주세요',
   },
   render: (args) => {

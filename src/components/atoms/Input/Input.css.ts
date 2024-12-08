@@ -1,6 +1,69 @@
 import { recipe } from '@vanilla-extract/recipes';
 import { vars } from '../../../foundations/theme.css';
-import { normalizePath } from 'vite';
+import { style } from '@vanilla-extract/css';
+
+export const inputContainerStyle = style({
+  display: 'flex',
+  alignItems: 'center',
+  gap: '8px',
+  position: 'relative',
+});
+
+export const inputPrefixStyle = recipe({
+  base: {
+    position: 'absolute',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  variants: {
+    size: {
+      sm: {
+        width: '18px',
+        height: '18px',
+        left: '8px',
+        paddingTop: '2px',
+      },
+      md: {
+        width: '24px',
+        height: '24px',
+        left: '12px',
+        paddingTop: '2px',
+      },
+      lg: {
+        width: '28px',
+        height: '28px',
+        left: '16px',
+        paddingTop: '2px',
+      },
+    },
+  },
+});
+
+export const inputSuffixStyle = recipe({
+  base: {
+    position: 'absolute',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  variants: {
+    size: {
+      sm: {
+        right: '8px',
+        paddingTop: '2px',
+      },
+      md: {
+        right: '12px',
+        paddingTop: '2px',
+      },
+      lg: {
+        right: '16px',
+        paddingTop: '2px',
+      },
+    },
+  },
+});
 
 export const inputStyleRecipe = recipe({
   base: {},
@@ -93,10 +156,42 @@ export const inputStyleRecipe = recipe({
         fontSize: vars.fontSize[16],
       },
       lg: {
-        padding: '12px 16px',
+        padding: '10px 16px',
         paddingTop: '14px',
         fontSize: vars.fontSize[20],
       },
     },
+    hasPrefix: {
+      true: {},
+    },
+    hasSuffix: {
+      true: {},
+    },
   },
+  compoundVariants: [
+    {
+      variants: { hasPrefix: true, size: 'sm' },
+      style: { paddingLeft: '32px' },
+    },
+    {
+      variants: { hasPrefix: true, size: 'md' },
+      style: { paddingLeft: '36px' },
+    },
+    {
+      variants: { hasPrefix: true, size: 'lg' },
+      style: { paddingLeft: '40px' },
+    },
+    {
+      variants: { hasSuffix: true, size: 'sm' },
+      style: { paddingRight: '32px' },
+    },
+    {
+      variants: { hasSuffix: true, size: 'md' },
+      style: { paddingRight: '36px' },
+    },
+    {
+      variants: { hasSuffix: true, size: 'lg' },
+      style: { paddingRight: '40px' },
+    },
+  ],
 });
