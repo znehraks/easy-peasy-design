@@ -19,7 +19,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>((props, ref) => {
         id={id}
         ref={ref}
         type="radio"
-        className={clsx(radioStyleRecipe({ color, size, disabled, readOnly }))}
+        className={clsx(radioStyleRecipe({ color, size, disabled, readOnly }), className)}
         {...rest}
       />
       <label htmlFor={id} className={clsx(radioLabelStyleRecipe({ size }))}>
