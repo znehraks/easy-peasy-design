@@ -12,6 +12,16 @@ globalStyle('html, body', {
   width: '100%',
 });
 
+globalStyle('body', {
+  // 모멘텀 스크롤
+  WebkitOverflowScrolling: 'touch',
+  // 노치 디스플레이 대응
+  paddingTop: 'env(safe-area-inset-top)',
+  paddingBottom: 'env(safe-area-inset-bottom)',
+  paddingLeft: 'env(safe-area-inset-left)',
+  paddingRight: 'env(safe-area-inset-right)',
+});
+
 globalStyle('img, picture, video, canvas, svg', {
   display: 'block',
   maxWidth: '100%',
