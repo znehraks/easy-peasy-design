@@ -1,4 +1,4 @@
-import { forwardRef, useEffect, useRef, useState } from 'react';
+import { forwardRef, useRef, useState } from 'react';
 import { inputContainerStyle, inputPrefixStyle, inputStyleRecipe, inputSuffixStyle } from './Input.css';
 import { RecipeVariants } from '@vanilla-extract/recipes';
 import { Size } from '../../types';
