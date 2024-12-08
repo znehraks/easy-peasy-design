@@ -68,7 +68,7 @@ const createSolidVariant = (color: ColorVariant): CompoundVariantType => {
     variants: { color, variant: 'solid' },
     style: {
       backgroundColor: vars.color[color][500],
-      color: vars.color.white,
+      color: vars.color.stableWhite,
       selectors: {
         '&:not([disabled]):not([aria-readonly="true"]):hover': {
           backgroundColor: vars.color[color][600],
@@ -113,7 +113,7 @@ const createOutlineVariant = (color: ColorVariant): CompoundVariantType => {
     style: {
       backgroundColor: 'transparent',
       color: vars.color[color][500],
-      border: `1px solid ${vars.color[color][300]}`,
+      border: `1px solid ${vars.color[color][400]}`,
       selectors: {
         '&:not([disabled]):not([aria-readonly="true"]):hover': {
           backgroundColor: vars.color[color][100],
@@ -264,6 +264,7 @@ export const buttonStyleRecipe = recipe({
       solid: {
         backgroundColor: vars.color.blue[500],
         color: vars.color.white,
+        fontWeight: 'bold',
         '&:hover': {
           backgroundColor: vars.color.blue[600],
         },

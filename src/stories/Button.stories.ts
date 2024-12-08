@@ -17,7 +17,9 @@ const meta = {
   argTypes: {
     color: {
       control: 'inline-radio',
-      options: Object.keys(vars.color).filter((key) => key !== 'blackAlpha' && key !== 'whiteAlpha'),
+      options: Object.keys(vars.color).filter(
+        (key) => key !== 'blackAlpha' && key !== 'whiteAlpha' && key !== 'stableWhite' && key !== 'stableBlack',
+      ),
     },
     size: {
       control: 'inline-radio',
