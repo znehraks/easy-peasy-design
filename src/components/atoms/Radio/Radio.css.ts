@@ -26,6 +26,7 @@ export const radioWrapperStyleRecipe = recipe({
 export const radioLabelStyleRecipe = recipe({
   base: {
     paddingTop: '3px',
+    color: vars.color.black,
   },
   variants: {
     size: {

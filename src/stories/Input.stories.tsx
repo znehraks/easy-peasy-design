@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { vars } from '../foundations/theme.css';
 import { Input } from '../components';
 import { inputStyle } from './style.css';
+import { RefreshCcw, Search } from 'lucide-react';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -40,8 +41,8 @@ export const Default: Story = {
     variant: 'outline',
     disabled: false,
     readOnly: false,
-    suffix: 'dsdd',
-    prefix: 'dd',
+    prefix: <Search size={24} />,
+    suffix: <RefreshCcw size={24} />,
     placeholder: '입력해주세요',
   },
   render: (args) => {

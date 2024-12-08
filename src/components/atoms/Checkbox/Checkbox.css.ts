@@ -26,6 +26,7 @@ export const checkboxLabelStyleRecipe = recipe({
     display: 'flex',
     alignItems: 'center',
     paddingTop: '3px',
+    color: vars.color.black,
   },
   variants: {
     size: {

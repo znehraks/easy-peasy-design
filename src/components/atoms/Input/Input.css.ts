@@ -9,64 +9,75 @@ export const inputContainerStyle = style({
   position: 'relative',
 });
 
+const addonStyle = style({
+  position: 'absolute',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  color: vars.color.gray[500],
+});
+
 export const inputPrefixStyle = recipe({
-  base: {
-    position: 'absolute',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  base: addonStyle,
   variants: {
+    focused: {
+      true: {
+        color: vars.color.black,
+      },
+    },
     size: {
       sm: {
         width: '18px',
         height: '18px',
         left: '8px',
-        paddingTop: '2px',
       },
       md: {
         width: '24px',
         height: '24px',
         left: '12px',
-        paddingTop: '2px',
       },
       lg: {
         width: '28px',
         height: '28px',
         left: '16px',
-        paddingTop: '2px',
       },
     },
   },
 });
 
 export const inputSuffixStyle = recipe({
-  base: {
-    position: 'absolute',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  base: addonStyle,
   variants: {
+    focused: {
+      true: {
+        color: vars.color.black,
+      },
+    },
     size: {
       sm: {
+        width: '18px',
+        height: '18px',
         right: '8px',
-        paddingTop: '2px',
       },
       md: {
+        width: '24px',
+        height: '24px',
         right: '12px',
-        paddingTop: '2px',
       },
       lg: {
+        width: '28px',
+        height: '28px',
         right: '16px',
-        paddingTop: '2px',
       },
     },
   },
 });
 
 export const inputStyleRecipe = recipe({
-  base: {},
+  base: {
+    color: vars.color.black,
+    backgroundColor: vars.color.white,
+  },
   variants: {
     variant: {
       outline: {
@@ -146,18 +157,18 @@ export const inputStyleRecipe = recipe({
     },
     size: {
       sm: {
-        padding: '4px 8px',
-        paddingTop: '6px',
+        padding: '8px 12px',
+        paddingTop: '10px',
         fontSize: vars.fontSize[12],
       },
       md: {
-        padding: '8px 12px',
-        paddingTop: '10px',
+        padding: '10px 16px',
+        paddingTop: '12px',
         fontSize: vars.fontSize[16],
       },
       lg: {
         padding: '10px 16px',
-        paddingTop: '14px',
+        paddingTop: '12px',
         fontSize: vars.fontSize[20],
       },
     },
@@ -175,11 +186,11 @@ export const inputStyleRecipe = recipe({
     },
     {
       variants: { hasPrefix: true, size: 'md' },
-      style: { paddingLeft: '36px' },
+      style: { paddingLeft: '40px' },
     },
     {
       variants: { hasPrefix: true, size: 'lg' },
-      style: { paddingLeft: '40px' },
+      style: { paddingLeft: '44px' },
     },
     {
       variants: { hasSuffix: true, size: 'sm' },
@@ -187,11 +198,11 @@ export const inputStyleRecipe = recipe({
     },
     {
       variants: { hasSuffix: true, size: 'md' },
-      style: { paddingRight: '36px' },
+      style: { paddingRight: '40px' },
     },
     {
       variants: { hasSuffix: true, size: 'lg' },
-      style: { paddingRight: '40px' },
+      style: { paddingRight: '44px' },
     },
   ],
 });

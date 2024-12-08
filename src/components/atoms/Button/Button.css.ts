@@ -46,8 +46,8 @@ const createSolidVariant = (color: ColorVariant): CompoundVariantType => {
     return {
       variants: { color, variant: 'solid' },
       style: {
-        backgroundColor: vars.color[color],
-        color: color === 'white' ? vars.color.black : vars.color.white,
+        backgroundColor: color === 'white' ? vars.color.stableWhite : vars.color.stableBlack,
+        color: color === 'white' ? vars.color.stableBlack : vars.color.stableWhite,
         selectors: {
           '&:not([disabled]):not([aria-readonly="true"]):hover': {
             backgroundColor: color === 'white' ? vars.color.blackAlpha[200] : vars.color.blackAlpha[800],
