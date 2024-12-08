@@ -30,13 +30,13 @@ export const checkboxLabelStyleRecipe = recipe({
   variants: {
     size: {
       sm: {
-        fontSize: '14px',
+        fontSize: vars.fontSize[12],
       },
       md: {
-        fontSize: '18px',
+        fontSize: vars.fontSize[16],
       },
       lg: {
-        fontSize: '22px',
+        fontSize: vars.fontSize[20],
       },
     },
   },

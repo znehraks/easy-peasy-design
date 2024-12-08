@@ -289,12 +289,15 @@ export const buttonStyleRecipe = recipe({
     size: {
       sm: {
         padding: '6px 12px',
+        fontSize: vars.fontSize[12],
       },
       md: {
         padding: '10px 16px',
+        fontSize: vars.fontSize[16],
       },
       lg: {
         padding: '12px 24px',
+        fontSize: vars.fontSize[20],
       },
     },
   },
