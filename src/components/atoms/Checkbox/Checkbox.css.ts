@@ -93,11 +93,13 @@ export const checkboxStyleRecipe = recipe({
     disabled: {
       true: {
         backgroundColor: vars.color.blackAlpha[200],
+        cursor: 'not-allowed',
       },
     },
     readOnly: {
       true: {
         backgroundColor: vars.color.blackAlpha[200],
+        cursor: 'not-allowed',
       },
     },
   },

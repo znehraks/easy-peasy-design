@@ -33,6 +33,8 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
           ref={mergeRefs(ref, checkboxRef)}
           type="checkbox"
           checked={checked}
+          disabled={disabled}
+          readOnly={readOnly}
           className={clsx(checkboxStyleRecipe({ disabled, readOnly, color, size }), className)}
           {...rest}
         />
