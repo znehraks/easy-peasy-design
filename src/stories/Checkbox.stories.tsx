@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
 import { vars } from '../foundations/theme.css';
 import { Checkbox } from '../components';
+import { useState } from 'react';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -35,9 +35,16 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    color: 'while',
+    color: 'blue',
     size: 'md',
     disabled: false,
     readOnly: false,
+    indeterminate: true,
+    checked: false,
+    children: '약관에 동의하기',
+  },
+  render: (args) => {
+    const [checked, setChecked] = useState(args.checked);
+    return <Checkbox {...args} checked={checked} onChange={() => setChecked(!checked)} />;
   },
 };
