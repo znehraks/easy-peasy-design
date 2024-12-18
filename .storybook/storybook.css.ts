@@ -3,8 +3,9 @@ import { vars } from '../src/foundations/theme.css';
 
 export const storybookStyle = style({
   backgroundColor: vars.color.white,
-  width: '100vw',
-  height: '100vh',
+  width: '100%',
+  height: '100%',
+  padding: '40px',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
