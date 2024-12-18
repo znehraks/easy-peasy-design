@@ -1,7 +1,6 @@
 import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
-
-export const TRANSITION_SECONDS = 0.3;
+import { TRANSITION_SECONDS } from '../../common/constants';
 
 export const modalRootStyle = style({
   position: 'fixed',
@@ -20,8 +19,6 @@ export const modalContainerStyleRecipe = recipe({
     willChange: 'transform opacity scale',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
     width: '400px',
     height: '400px',
     backgroundColor: 'white',
