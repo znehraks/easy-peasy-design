@@ -7,10 +7,9 @@
 import { createPortal } from 'react-dom';
 import { modalBackdropStyleRecipe, modalRootStyle, modalContainerStyleRecipe } from './ModalRoot.css';
 import { ModalCommonProps } from './types';
-import { useState, useEffect } from 'react';
 import clsx from 'clsx';
-import { TRANSITION_SECONDS } from '../../common/constants';
 import { useFadeEffect } from '../../common/hooks/useFadeEffect';
+import { forwardRef } from 'react';
 
 export type ModalRootProps = ModalCommonProps &
   React.HTMLAttributes<HTMLDivElement> & {
@@ -22,33 +21,31 @@ export type ModalRootProps = ModalCommonProps &
     rootStyle?: React.CSSProperties;
   };
 
-export const ModalRoot = ({
-  children,
-  isOpen,
-  onClose,
-  className,
-  rootClassName,
-  rootStyle,
-  backdropClassName,
-  backdropStyle,
-  ...rest
-}: ModalRootProps) => {
-  const { isVisible, isMounted } = useFadeEffect(isOpen);
-  if (!isMounted) return null;
+export const ModalRoot = forwardRef<HTMLDivElement, ModalRootProps>(
+  (
+    { children, isOpen, onClose, className, rootClassName, rootStyle, backdropClassName, backdropStyle, ...rest },
+    ref,
+  ) => {
+    const { isVisible, isMounted } = useFadeEffect(isOpen);
 
-  return createPortal(
-    <div className={clsx(modalRootStyle, rootClassName)} style={rootStyle}>
-      <div
-        role="button"
-        aria-label="modal backdrop"
-        onClick={onClose}
-        className={clsx(modalBackdropStyleRecipe({ isVisible }), backdropClassName)}
-        style={backdropStyle}
-      />
-      <div className={clsx(modalContainerStyleRecipe({ isVisible }), className)} {...rest}>
-        {children}
-      </div>
-    </div>,
-    document.body,
-  );
-};
+    if (!isMounted) return null;
+
+    return createPortal(
+      <div className={clsx(modalRootStyle, rootClassName)} style={rootStyle}>
+        <div
+          role="button"
+          aria-label="modal backdrop"
+          onClick={onClose}
+          className={clsx(modalBackdropStyleRecipe({ isVisible }), backdropClassName)}
+          style={backdropStyle}
+        />
+        <div ref={ref} className={clsx(modalContainerStyleRecipe({ isVisible }), className)} {...rest}>
+          {children}
+        </div>
+      </div>,
+      document.body,
+    );
+  },
+);
+
+ModalRoot.displayName = 'ModalRoot';
