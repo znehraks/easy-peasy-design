@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { vars } from '../../foundations/theme.css';
 import { Checkbox } from '../../components';
 
@@ -45,6 +45,12 @@ export const Default: Story = {
   },
   render: (args) => {
     const [checked, setChecked] = useState(args.checked);
+    args.onChange = () => setChecked(!checked);
+
+    useEffect(() => {
+      setChecked(args.checked);
+    }, [args.checked]);
+
     return <Checkbox {...args} checked={checked} onChange={() => setChecked(!checked)} />;
   },
 };
