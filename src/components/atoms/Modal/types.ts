@@ -1,3 +1,3 @@
 import { PropsWithChildren } from 'react';
 
-export type ModalCommonProps = PropsWithChildren & {};
+export type ModalCommonProps = React.HTMLAttributes<HTMLDivElement> & PropsWithChildren & {};

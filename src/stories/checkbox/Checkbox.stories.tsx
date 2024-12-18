@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
-import { Button } from '../components';
-import { vars } from '../foundations/theme.css';
+import { useState } from 'react';
+import { vars } from '../../foundations/theme.css';
+import { Checkbox } from '../../components';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'Example/Button',
-  component: Button,
+  title: 'Example/Checkbox',
+  component: Checkbox,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',
@@ -17,9 +17,7 @@ const meta = {
   argTypes: {
     color: {
       control: 'inline-radio',
-      options: Object.keys(vars.color).filter(
-        (key) => key !== 'blackAlpha' && key !== 'whiteAlpha' && key !== 'stableWhite' && key !== 'stableBlack',
-      ),
+      options: Object.keys(vars.color).filter((key) => key !== 'blackAlpha' && key !== 'whiteAlpha'),
     },
     size: {
       control: 'inline-radio',
@@ -27,54 +25,26 @@ const meta = {
     },
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  args: { onClick: fn() },
-} satisfies Meta<typeof Button>;
+  //   args: { onClick: fn() },
+} satisfies Meta<typeof Checkbox>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 
-export const Solid: Story = {
+export const Default: Story = {
   args: {
-    variant: 'solid',
-    color: 'red',
+    color: 'blue',
     size: 'md',
     disabled: false,
     readOnly: false,
-    children: 'Button',
+    indeterminate: true,
+    checked: false,
+    children: '약관에 동의하기',
   },
-};
-
-export const Outline: Story = {
-  args: {
-    variant: 'outline',
-    color: 'red',
-    size: 'md',
-    disabled: false,
-    readOnly: false,
-    children: 'Button',
-  },
-};
-
-export const Ghost: Story = {
-  args: {
-    variant: 'ghost',
-    color: 'red',
-    size: 'md',
-    disabled: false,
-    readOnly: false,
-    children: 'Button',
-  },
-};
-
-export const Plain: Story = {
-  args: {
-    variant: 'plain',
-    color: 'red',
-    size: 'md',
-    disabled: false,
-    readOnly: false,
-    children: 'Button',
+  render: (args) => {
+    const [checked, setChecked] = useState(args.checked);
+    return <Checkbox {...args} checked={checked} onChange={() => setChecked(!checked)} />;
   },
 };
