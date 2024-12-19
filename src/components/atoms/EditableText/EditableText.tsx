@@ -9,10 +9,18 @@ import {
 import clsx from 'clsx';
 import { EditableTextProps } from './EditableText.types';
 import { useHandleKeyDown, useInputWidth } from './useEditableText';
+import { PolymorphicComponentProps, PolymorphicRef } from '../../common/types';
 
-export const EditableText = forwardRef<HTMLDivElement, EditableTextProps>(
-  (
+type Props<C extends React.ElementType> = PolymorphicComponentProps<C, EditableTextProps>;
+
+type EditableTextType = <C extends React.ElementType = 'div'>(
+  props: PolymorphicComponentProps<C, Props<C>>,
+) => React.ReactNode;
+
+export const EditableText: EditableTextType = forwardRef(
+  <C extends React.ElementType = 'div'>(
     {
+      as,
       children,
       className,
       onEditComplete,
@@ -25,8 +33,8 @@ export const EditableText = forwardRef<HTMLDivElement, EditableTextProps>(
       spanStyle,
       completeTrigger = 'all',
       ...rest
-    },
-    ref,
+    }: Props<C>,
+    ref?: PolymorphicRef<C>,
   ) => {
     // 편집 상태 관리
     const [isEditing, setIsEditing] = useState(false);
@@ -69,8 +77,10 @@ export const EditableText = forwardRef<HTMLDivElement, EditableTextProps>(
       adjustInputWidth();
     };
 
+    const Component = as || 'div';
+
     return (
-      <div
+      <Component
         ref={ref}
         className={clsx(editableTextContainerStyleRecipe(), containerClassName)}
         style={containerStyle}
@@ -97,9 +107,7 @@ export const EditableText = forwardRef<HTMLDivElement, EditableTextProps>(
             {children}
           </span>
         )}
-      </div>
+      </Component>
     );
   },
 );
-
-EditableText.displayName = 'EditableText';
