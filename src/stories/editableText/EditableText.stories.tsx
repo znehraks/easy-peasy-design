@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { EditableText } from '../../components/atoms/EditableText/EditableText';
+import { EditableText } from '../../components';
 import { useState } from 'react';
 
 const meta = {

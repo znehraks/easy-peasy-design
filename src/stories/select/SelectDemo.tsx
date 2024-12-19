@@ -1,4 +1,4 @@
-import { Select } from '../../components/atoms/Select/Select';
+import { Select } from '../../components';
 
 export const SelectDemo = () => {
   return <Select />;
