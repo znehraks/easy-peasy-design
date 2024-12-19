@@ -29,6 +29,8 @@ globalStyle('img, picture, video, canvas, svg', {
 
 globalStyle('input, button, textarea, select', {
   font: 'inherit',
+  minWidth: 0,
+  width: 'auto',
 });
 
 globalStyle('p, h1, h2, h3, h4, h5, h6', {
